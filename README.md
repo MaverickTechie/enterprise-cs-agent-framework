@@ -82,24 +82,4 @@ When initialized, your terminal logs verify the execution graph structure and di
 [Node] Tracking account telemetry logs and CRM data signals...
 [Status] Churn risk indicators isolated. Approaching next node execution path...
 
-## 🏗️ System Architecture & Workflow Graph
 
-```mermaid
-graph TD
-    A[START] --> B[analyze_account_health]
-    B --> C{CRITICAL HITL INTERRUPT <br> Execution Paused for Approval}
-    C -->|Human Approved| D[generate_retention_plan]
-    D --> E[END]
-
-    style C fill:#2dd4bf,stroke:#0f766e,stroke-width:2px,color:#000
-    style B fill:#f1f5f9,stroke:#64748b,stroke-width:1px
-    style D fill:#f1f5f9,stroke:#64748b,stroke-width:1px
-```
-
-
-=== [SYSTEM INTERRUPT TRIGGERED] ===
-The LangGraph execution instance has safely paused.
-Current Application State Payload has been serialized to the Checkpointer.
-Reason: Human-in-the-Loop approval is required prior to executing 'generate_retention_plan'.
-====================================
-```
